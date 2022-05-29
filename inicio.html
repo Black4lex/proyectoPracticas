@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body
+        {
+            margin: 0;
+            background-color: var(--dark-green);
+            font-family: 'Poppins', sans-serif;
+        }
+        :root
+        {
+            --dark-green: #15251D;
+            --light-green: #30833B;
+            --text-input: #F7F7F7;
+            --very-dark-green: #0E1211;
+            --grey: #E9EBF9;
+            --white: #FFFFFF;
+            --black: #000000;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+        nav
+        {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 24px;
+            border-bottom: 1px solid var(--white);
+        }
+        .logo
+        {
+            width: 100px;
+        }
+        .navbarLeft
+        {
+            display: flex;
+            margin-left: 12px;
+
+        }
+        .navbarRigth
+        {
+            margin-top: 30px;
+        }
+        .navbarLeft ul
+        {
+            margin-left: 40px;
+        }
+        .navbarRigth ul
+        {
+            margin-right: 40px;
+        }
+        .navbarLeft ul,
+        .navbarRigth ul
+        {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        .navbarLeft ul li a,
+        .navbarRigth ul li a
+        {
+            text-decoration: none;
+            color: var(--grey);
+            border: 1px solid var(--dark-green);
+            padding: 8px;
+            border-radius: 8px;
+        }
+        .navbarLeft ul li a:hover,
+        .navbarRigth ul li a:hover
+        {
+            border: 1px solid var(--light-green);
+            color: var(--light-green);
+        }
+        .navbarEmail
+        {
+            color: var(--grey);
+            font-size: var(--sm);
+        }
+        .navbarAccount
+        {
+            margin-left: 40px;
+        }
+        .titles
+        {
+            display: flex;
+        }
+        .titles p
+        {
+            font-weight: bold;
+            margin-left: 240px;
+            padding-right: 600px;
+        }
+        .mainContainer
+        {
+            display: flex;
+            gap: 280px;
+        }
+        .cardsContainerList,
+        .cardsContainerFavorites
+        {
+            display: grid;
+            gap: 12px;
+        }
+        .cardsContainerList
+        {
+            padding-right: 320px;
+            border-right: 1px solid var(--grey);
+            margin-left: 140px;
+        }
+        .musicList
+        {
+            width: 380px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            background: var(--very-dark-green);
+            border-radius: 12px;
+            margin-left: 12px;
+            margin-top: 12px;
+        } 
+        .musicList img
+        {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin: 12px;
+        }
+        .songInfo
+        {
+            display: grid;
+            grid-template-columns: repeat(3, 240px);
+            align-items: center;
+        }
+        .songInfo figure 
+        {
+            margin: 0;
+        }
+        .songInfo figure img
+        {
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+        }
+        .songInfo div p:nth-child(1)
+        {
+            font-weight: bold;
+            font-size: var(--md);
+            margin-top: 16px;
+            margin-bottom: 4px;
+            color: var(--grey);
+        } 
+        .songInfo div p:nth-child(2)
+        {
+            font-weight: bold;
+            font-size: var(--sm);
+            margin-top: 0;
+            margin-bottom: 0;
+            color: var(--light-green);
+        }
+        .songInfo div p:nth-child(3)
+        {
+            font-weight: bold;
+            font-size: var(--sm);
+            margin-top: 0;
+            margin-bottom: 0;
+            color: var(--light-green);
+        }  
+        @media (max-width: 640px)
+        {
+            .cardsContainer
+            {
+                grid-template-rows: repeat(auto-fill, 140px);
+            }
+            .musicList
+            {
+                width: 340px;
+            } 
+            .musicList img
+            {
+                width: 60px;
+                height: 60px;
+                border-radius: 8px;
+                object-fit: cover;
+            }
+        }
+        .add
+        {
+            background: transparent;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbarLeft">
+            <img src="./logo/icons8-spotify-96.svg" alt="logo" class="logo">
+            <ul>
+                <li>
+                    <a href="/">BIBLIOTECA</a>
+                </li>
+                <li>
+                    <a href="/">EXPLORAR</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbarRigth">
+            <ul>
+                <li class="navbarEmail">ejemplo@gmail.com</li>
+                <li class="navbarAccount">
+                    <img src="./icons/icon_menu.svg" alt="menu">
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="titles">
+        <p>EXPLORADOR DE MUSICA</p>
+        <p>MIS FAVORITOS</p>
+    </div>
+    <section class="mainContainer">
+        <div class="cardsContainerList">
+            <div class="musicList">
+                <img src="https://i.scdn.co/image/ab67616d00004851813713582dcc508e7d5073c4" alt="" class="songImg">
+                <div class="songInfo">
+                    <div>
+                        <p id="songTitle">Bones 
+                            <p id="genYear">Pop, 2022<p id="artist">IMAGINE DRAGONS</p></p>
+                        </p>
+                    </div>
+                    <figure>
+                        <button class="add" id="button_bones">
+                            <img src="./icons/icons8-más-48.svg" alt="" id="imgBones">
+                        </button>
+                    </figure>
+                </div>
+            </div>
+            <div class="musicList">
+                <img src="https://i.scdn.co/image/ab67616d00004851aa597e50829169e6994eb403" alt="" class="songImg">
+                <div class="songInfo">
+                    <div>
+                        <p id="songTitle2">Enemy 
+                            <p id="genYear2">Pop Rock, 2021<p id="artist2">IMAGINE DRAGONS Y J.I.D</p></p>
+                        </p>
+                    </div>
+                    <figure>
+                        <button class="add" id="button_enemy">
+                            <img src="./icons/icons8-más-48.svg" alt="" id="imgBones">
+                        </button>
+                    </figure>
+                </div>
+            </div>
+            <div class="musicList">
+                <img src="https://i.scdn.co/image/ab67616d00004851ce6b979ca98da4c27157dc17" alt="" class="songImg">
+                <div class="songInfo">
+                    <div>
+                        <p id="songTitle3">Ain't No Rest For The Wicked 
+                            <p id="genYear3">Rock Alternativo, 2008<p id="artist3">CAGE THE ELEPHANT</p></p>
+                        </p>
+                    </div>
+                    <figure>
+                        <button class="add" id="button_wicked">
+                            <img src="./icons/icons8-más-48.svg" alt="" id="imgBones">
+                        </button>
+                    </figure>
+                </div>
+            </div>
+            <div class="musicList">
+                <img src="https://i.scdn.co/image/ab67616d00004851463986d828c59a03f2ab0a3f" alt="" class="songImg">
+                <div class="songInfo">
+                    <div>
+                        <p id="songTitle4">Short Change Hero 
+                            <p id="genYear4">Alternativo, 2009<p id="artist4">THE HEAVY</p></p>
+                        </p>
+                    </div>
+                    <figure>
+                        <button class="add" id="button_short">
+                            <img src="./icons/icons8-más-48.svg" alt="" id="imgBones">
+                        </button>
+                    </figure>
+                </div>
+            </div>
+            <div class="musicList">
+                <img src="https://i.scdn.co/image/ab67616d0000485189beb8943628bb99ad768968" alt="" class="songImg">
+                <div class="songInfo">
+                    <div>
+                        <p id="songTitle5">Stay 
+                            <p id="genYear5">Alternativo, 2014<p id="artist5">30 SECONDS TO MARS</p></p>
+                        </p>
+                    </div>
+                    <figure>
+                        <button class="add" id="button_stay">
+                            <img src="./icons/icons8-más-48.svg" alt="" id="imgBones">
+                        </button>
+                    </figure>
+                </div>
+            </div>
+            <div class="musicList">
+                <img src="https://i.scdn.co/image/ab67616d00004851c451ed28353639e79b4d97d9" alt="" class="songImg">
+                <div class="songInfo">
+                    <div>
+                        <p id="songTitle6">De Musica Ligera 
+                            <p id="genYear6">Rock en Español, 1990<p id="artist6">SODA STEREO</p></p>
+                        </p>
+                    </div>
+                    <figure>
+                        <button class="add" id="button_musica">
+                            <img src="./icons/icons8-más-48.svg" alt="" id="imgBones">
+                        </button>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardsContainerFavorites">
+            <div class="musicList" id="lista1">
+                <img src="/" alt="" class="songImg" id="firstImg">
+                <div class="songInfo">
+                    <div>
+                        <p id="songTitleF"> 
+                            <p id="genYearF"><p id="artistF"></p></p>
+                        </p>
+                    </div>
+                    <figure>
+                        <button class="add" id="button_remove1">
+                            <img src="./icons/icons8-eliminar-48.svg" alt="">
+                        </button>
+                    </figure>
+                </div>
+            </div>
+            <div class="musicList" id="lista2">
+                <img src="/" alt="" class="songImg" id="firstImg2">
+                <div class="songInfo">
+                    <div>
+                        <p id="songTitleF2"> 
+                            <p id="genYearF2"><p id="artistF2"></p></p>
+                        </p>
+                    </div>
+                    <figure>
+                        <button class="add" id="button_remove2">
+                            <img src="./icons/icons8-eliminar-48.svg" alt="">
+                        </button>
+                    </figure>
+                </div>
+            </div>
+            <div class="musicList" id="lista3">
+                <img src="/" alt="" class="songImg" id="firstImg3">
+                <div class="songInfo">
+                    <div>
+                        <p id="songTitleF3">
+                            <p id="genYearF3"><p id="artistF3"></p></p>
+                        </p>
+                    </div>
+                    <figure>
+                        <button class="add" id="button_remove3">
+                            <img src="./icons/icons8-eliminar-48.svg" alt="">
+                        </button>
+                    </figure>
+                </div>
+            </div>
+            <div class="musicList" id="lista4">
+                <img src="/" alt="" class="songImg" id="firstImg4">
+                <div class="songInfo">
+                    <div>
+                        <p id="songTitleF4"> 
+                            <p id="genYearF4"><p id="artistF4"></p></p>
+                        </p>
+                    </div>
+                    <figure>
+                        <button class="add" id="button_remove4">
+                            <img src="./icons/icons8-eliminar-48.svg" alt="">
+                        </button>
+                    </figure>
+                </div>
+            </div>
+            <div class="musicList" id="lista5">
+                <img src="/" alt="" class="songImg" id="firstImg5">
+                <div class="songInfo">
+                    <div>
+                        <p id="songTitleF5"> 
+                            <p id="genYearF5"><p id="artistF5"></p></p>
+                        </p>
+                    </div>
+                    <figure>
+                        <button class="add" id="button_remove5">
+                            <img src="./icons/icons8-eliminar-48.svg" alt="">
+                        </button>
+                    </figure>
+                </div>
+            </div>
+            <div class="musicList" id="lista6">
+                <img src="/" alt="" class="songImg" id="firstImg6">
+                <div class="songInfo">
+                    <div>
+                        <p id="songTitleF6"> 
+                            <p id="genYearF6"><p id="artistF6"></p></p>
+                        </p>
+                    </div>
+                    <figure>
+                        <button class="add" id="button_remove6">
+                            <img src="./icons/icons8-eliminar-48.svg" alt="">
+                        </button>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./agregarFavorito.js"></script>
+</body>
+</html>
